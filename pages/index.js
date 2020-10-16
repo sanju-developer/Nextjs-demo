@@ -17,6 +17,7 @@ export default function Home() {
         </h1>
         <h2>* Pages based routing</h2>
         <Link href="/posts"><a>Go to post list page</a></Link>
+        <Link href="/redux-example"><a>Go to redux example</a></Link>
       </main>
     </div>
   )
