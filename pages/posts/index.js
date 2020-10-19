@@ -15,7 +15,8 @@ export default function PostList({ postlist,href }) {
     return <>
         <Layout>
             <Head>
-                <title>First Post</title>
+                <title>Post list</title>
+                <meta name="description" content="Total post lists."/>
             </Head>
             <h1>Post list</h1>
             <Link href="/">
