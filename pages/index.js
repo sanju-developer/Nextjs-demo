@@ -1,9 +1,11 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { withTranslation } from '../i18n'
+import PropTypes from 'prop-types'
 
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+const Home = ({t}) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -13,7 +15,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          SEO with Nextjs.
+        {t('SEO with Nextjs.')}
         </h1>
         <h2>* Pages based routing</h2>
         <Link href="/posts"><a>Go to post list page</a></Link>
@@ -22,3 +24,14 @@ export default function Home() {
     </div>
   )
 }
+
+
+Home.getInitialProps = async () => ({
+  namespacesRequired: ['common'],
+})
+
+Home.propTypes = {
+  t: PropTypes.func.isRequired,
+}
+
+export default withTranslation('common')(Home)
